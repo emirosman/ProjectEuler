@@ -16,19 +16,17 @@ namespace _1_MultiplesOf3And5
     {
         static void Main(string[] args)
         {
-            int[] numberList = new int[1000];
             int response = 0;
-            for(int i = 0; i<1000; i++)
+            for(int i=5; i< 1000; i += 5)
             {
-                numberList[i] = i;
+                if (i % 3 != 0)
+                    response += i;
             }
-            List<int> responseList = numberList.Where(x => x % 3 == 0 || x % 5 == 0).ToList();
-            foreach(var number in responseList)
+            for(int i = 3; i < 1000; i += 3)
             {
-                Console.WriteLine(number);
-                response += number;
+                response += i;
             }
-            Console.WriteLine("Toplam => " + response);
+            Console.WriteLine(response);
             Console.Read();
         }
     }
